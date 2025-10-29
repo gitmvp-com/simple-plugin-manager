@@ -1,0 +1,210 @@
+.plugin-manager {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    height: 100%;
+}
+
+.plugin-list h2 {
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.plugins {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.plugin-card {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.plugin-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.plugin-card.selected {
+    border-color: var(--accent);
+    background: var(--bg-tertiary);
+}
+
+.plugin-card.enabled {
+    border-left: 4px solid var(--success);
+}
+
+.plugin-card.disabled {
+    border-left: 4px solid var(--danger);
+}
+
+.plugin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.plugin-header h3 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.status-badge.enabled {
+    background: var(--success);
+    color: var(--bg-primary);
+}
+
+.status-badge.disabled {
+    background: var(--danger);
+    color: var(--bg-primary);
+}
+
+.plugin-description {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.plugin-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.plugin-version {
+    font-family: 'Fira Code', monospace;
+    background: var(--bg-primary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.plugin-details {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    height: fit-content;
+    position: sticky;
+    top: 2rem;
+}
+
+.details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.details-header h2 {
+    color: var(--text-primary);
+}
+
+.toggle-btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+}
+
+.toggle-btn.enabled {
+    background: var(--danger);
+    color: white;
+}
+
+.toggle-btn.enabled:hover {
+    background: #e37393;
+}
+
+.toggle-btn.disabled {
+    background: var(--success);
+    color: var(--bg-primary);
+}
+
+.toggle-btn.disabled:hover {
+    background: #94d890;
+}
+
+.details-description {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.details-meta {
+    margin-bottom: 1.5rem;
+}
+
+.details-meta p {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.details-meta strong {
+    color: var(--text-primary);
+}
+
+.plugin-settings {
+    border-top: 1px solid var(--border);
+    padding-top: 1.5rem;
+}
+
+.plugin-settings h3 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.settings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: var(--bg-tertiary);
+    border-radius: 6px;
+}
+
+.setting-key {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.setting-value {
+    color: var(--accent);
+    background: var(--bg-primary);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-family: 'Fira Code', monospace;
+}
+
+@media (max-width: 768px) {
+    .plugin-manager {
+        grid-template-columns: 1fr;
+    }
+
+    .plugin-details {
+        position: static;
+    }
+}
